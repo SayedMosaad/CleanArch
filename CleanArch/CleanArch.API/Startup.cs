@@ -1,3 +1,4 @@
+using CleanArch.API.Configuration;
 using CleanArch.Infra.Data.Context;
 using CleanArch.Infra.IOC;
 using MediatR;
@@ -41,7 +42,7 @@ namespace CleanArch.API
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "University API", Version = "v1" });
             });
-
+            services.RegisterAutoMapper();
             services.AddMediatR(typeof(Startup));
             RegisterServices(services);
         }
